@@ -1,6 +1,7 @@
 import base64
 import copy
 import logging
+import urllib.parse
 
 from scrapy import Request
 from scrapy.spidermiddlewares.httperror import HttpError
@@ -54,6 +55,8 @@ class ZenscrapeRequest(Request):
                 continue
             elif k == 'cookies':
                 new_params[k] = cls.process_cookies(v)
+            elif k == 'url':
+                new_params[k] = urllib.parse.quote(v)
             else:
                 new_params[k] = v
         return new_params
