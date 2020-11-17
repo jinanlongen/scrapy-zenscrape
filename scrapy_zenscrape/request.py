@@ -67,3 +67,7 @@ class ZenscrapeRequest(Request):
                 f'Got Zenscrape error: {error.value.response.text}')
         else:
             logger.error(repr(error))
+            
+    # add missing method
+    def process_headers(self,headers):
+        return headers
