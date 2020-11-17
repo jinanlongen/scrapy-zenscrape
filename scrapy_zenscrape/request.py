@@ -13,7 +13,7 @@ class ZenscrapeRequest(Request):
 
     def __init__(self, url, params={}, headers=None, body=None,
                  cookies=None, meta=None, **kwargs):
-        meta = copy.deepcopy(meta) or {}
+#         meta = copy.deepcopy(meta) or {}
 
         if headers:
             params['forward_headers'] = True
